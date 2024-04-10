@@ -5,7 +5,7 @@ import BottomTabs from "../Components/Common/Navigator/BottomTabs";
 import StackNav from "../Components/Common/Navigator/StackNav";
 
 function RouterConfig() {
-  const isLoggedIn = false;
+  const isLoggedIn = true;
 
   return (
     <View style={styles.container}>

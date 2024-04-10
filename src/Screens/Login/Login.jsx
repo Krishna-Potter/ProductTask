@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Text, View } from "react-native";
 import { styles } from "./styles";
 import { Button, TextInput } from "react-native-paper";
+import { AuthApi } from "../../Api/services";
 
 function TextFieldBox({ placeholder, label, name, value, onChange }) {
   return (
@@ -23,8 +24,15 @@ function LoginScreen() {
     setUserData({ ...userData, [name]: value });
   };
 
-  const submitUserData = () => {
-    console.log("userdata", userData);
+  const submitUserData = async () => {
+    console.log(userData);
+    await AuthApi(userData)
+      .then((res) => {
+        console.log("res", res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
