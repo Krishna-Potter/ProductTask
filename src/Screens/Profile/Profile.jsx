@@ -1,8 +1,23 @@
-import React from "react";
-import { Text } from "react-native";
+import React, { useContext } from "react";
+import { Text, View } from "react-native";
+import { styles } from "./styles";
+import { AuthContext } from "../../Context/AuthContext";
+import { Button } from "react-native-paper";
 
 function ProfileScreen() {
-  return <Text>ProfileScreen</Text>;
+  const { updateLoginStatus } = useContext(AuthContext);
+  return (
+    <View style={styles.container}>
+      <Text style={styles.title}>Welcome user!</Text>
+      <Button
+        mode="contained"
+        style={styles.button}
+        onPress={() => updateLoginStatus(false)}
+      >
+        Logout
+      </Button>
+    </View>
+  );
 }
 
 export default ProfileScreen;

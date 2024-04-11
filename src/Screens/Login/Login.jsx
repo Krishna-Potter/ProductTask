@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Text, View } from "react-native";
 import { styles } from "./styles";
 import { Button, TextInput } from "react-native-paper";
 import { AuthApi } from "../../Api/services";
+import { AuthContext } from "../../Context/AuthContext";
 
 function TextFieldBox({ placeholder, label, name, value, onChange }) {
   return (
@@ -19,20 +20,29 @@ function TextFieldBox({ placeholder, label, name, value, onChange }) {
 
 function LoginScreen() {
   const [userData, setUserData] = useState({});
+  const { updateLoginStatus } = useContext(AuthContext);
 
   const handleUserData = (name, value) => {
     setUserData({ ...userData, [name]: value });
   };
 
-  const submitUserData = async () => {
-    console.log(userData);
-    await AuthApi(userData)
-      .then((res) => {
-        console.log("res", res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const submitUserData = () => {
+    // let payload = {
+    //   username: userData.username,
+    //   password: userData.password,
+    // };
+    // await AuthApi(payload)
+    //   .then((res) => {
+    //     console.log("res", res);
+    //   })
+    //   .catch((err) => {
+    //     console.log(err);
+    //   });
+    if (userData.username == "kminchelle" && userData.password == "0lelplR") {
+      updateLoginStatus(true);
+    } else {
+      console.log("Invalid credentials");
+    }
   };
 
   return (

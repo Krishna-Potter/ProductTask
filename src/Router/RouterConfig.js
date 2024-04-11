@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { View } from "react-native";
 import { styles } from "./styles";
 import BottomTabs from "../Components/Common/Navigator/BottomTabs";
 import StackNav from "../Components/Common/Navigator/StackNav";
+import { AuthContext } from "../Context/AuthContext";
 
 function RouterConfig() {
-  const isLoggedIn = true;
+  const { loginStatus } = useContext(AuthContext);
+  const isLoggedIn = loginStatus;
 
   return (
     <View style={styles.container}>
