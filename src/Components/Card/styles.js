@@ -48,4 +48,20 @@ export const styles = StyleSheet.create({
       },
     },
   },
+  manageCardContainer: {
+    borderRadius: 8,
+    borderWidth: 0.5,
+    borderColor: colorTheme.grey,
+    padding: 8,
+    marginVertical: 8,
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    title: {
+      color: colorTheme.grey,
+      fontSize: 20,
+      fontWeight: "500",
+      letterSpacing: 1,
+    },
+  },
 });
