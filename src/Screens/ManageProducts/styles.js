@@ -25,6 +25,9 @@ export const styles = StyleSheet.create({
     borderRadius: 2,
     elevation: 1,
   },
+  textBox: {
+    marginVertical: 4,
+  },
   submitBtn: {
     borderRadius: 0,
     marginVertical: 8,

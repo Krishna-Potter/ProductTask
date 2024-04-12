@@ -7,6 +7,8 @@ import { colorTheme } from "../../../Theme/colorTheme";
 import ProductInfoScreen from "../../../Screens/PrdoductInfo/ProductInfo";
 import AddProductScreen from "../../../Screens/ManageProducts/AddProduct";
 import EditProductScreen from "../../../Screens/ManageProducts/EditProduct";
+import HomeScreen from "../../../Screens/Home/Home";
+import RemoveProductScreen from "../../../Screens/ManageProducts/RemoveProduct";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -90,6 +92,16 @@ const OverAllNavs = () => {
       <Stack.Screen
         name="Edit Product"
         component={EditProductScreen}
+        options={{ headerShown: true }}
+      />
+      <Stack.Screen
+        name="Remove Product"
+        component={RemoveProductScreen}
+        options={{ headerShown: true }}
+      />
+      <Stack.Screen
+        name="Home"
+        component={HomeScreen}
         options={{ headerShown: true }}
       />
     </Stack.Navigator>

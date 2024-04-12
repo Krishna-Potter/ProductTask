@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { View } from "react-native";
 import { Button, TextInput } from "react-native-paper";
 import { styles } from "./styles";
-import { AddProductApi, EditProductApi } from "../../Api/services";
+import { EditProductApi, ProductListApi } from "../../Api/services";
 
 function TextFieldBox({ placeholder, label, name, value, onChange }) {
   return (
@@ -11,7 +11,7 @@ function TextFieldBox({ placeholder, label, name, value, onChange }) {
       mode="outlined"
       label={label}
       placeholder={placeholder}
-      value={value?.value}
+      value={value?.toString()}
       onChangeText={(value) => onChange(name, value)}
     />
   );
@@ -23,7 +23,7 @@ function EditProductScreen({ route }) {
   const { itemId } = route.params;
 
   const handleProductData = (name, value) => {
-    setUserData({ ...userData, [name]: value });
+    setProductData({ ...productdData, [name]: value });
   };
 
   const updateProductData = async () => {

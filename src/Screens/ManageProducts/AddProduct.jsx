@@ -21,7 +21,7 @@ function AddProductScreen() {
   const [productdData, setProductData] = useState({});
 
   const handleProductData = (name, value) => {
-    setUserData({ ...userData, [name]: value });
+    setProductData({ ...productdData, [name]: value });
   };
 
   const addProductData = async () => {

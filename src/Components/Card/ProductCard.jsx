@@ -4,7 +4,15 @@ import { styles } from "./styles";
 import { Button } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 
-function ProductCard({ id, image, title, brand, category }) {
+function ProductCard({
+  id,
+  image,
+  title,
+  brand,
+  category,
+  type,
+  removeProductFunc,
+}) {
   const navigation = useNavigation();
   return (
     <View style={styles.cardContainer}>
@@ -21,30 +29,43 @@ function ProductCard({ id, image, title, brand, category }) {
         <Text style={styles.descContainer.brand}>{brand}</Text>
         <Text style={styles.descContainer.category}>{category}</Text>
         <View style={styles.descContainer.actionContainer}>
-          <Button
-            // icon="camera"
-            mode="contained"
-            onPress={() =>
-              navigation.navigate("Edit Product", {
-                itemId: id,
-              })
-            }
-            style={styles.descContainer.actionContainer.Button}
-          >
-            Edit
-          </Button>
-          <Button
-            // icon="camera"
-            mode="outlined"
-            onPress={() =>
-              navigation.navigate("Product Details", {
-                itemId: id,
-              })
-            }
-            style={styles.descContainer.actionContainer.Button}
-          >
-            Info
-          </Button>
+          {type === "remove product" ? (
+            <Button
+              // icon="camera"
+              mode="contained"
+              onPress={removeProductFunc}
+              style={styles.descContainer.actionContainer.Button}
+            >
+              Remove
+            </Button>
+          ) : (
+            <>
+              <Button
+                // icon="camera"
+                mode="contained"
+                onPress={() =>
+                  navigation.navigate("Edit Product", {
+                    itemId: id,
+                  })
+                }
+                style={styles.descContainer.actionContainer.Button}
+              >
+                Edit
+              </Button>
+              <Button
+                // icon="camera"
+                mode="outlined"
+                onPress={() =>
+                  navigation.navigate("Product Details", {
+                    itemId: id,
+                  })
+                }
+                style={styles.descContainer.actionContainer.Button}
+              >
+                Info
+              </Button>
+            </>
+          )}
         </View>
       </View>
     </View>

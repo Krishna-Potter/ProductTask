@@ -8,5 +8,8 @@ export const styles = StyleSheet.create({
   searchContainer: {
     marginBottom: 8,
   },
+  scrollView: {
+    marginBottom: 60,
+  },
   productContainer: {},
 });

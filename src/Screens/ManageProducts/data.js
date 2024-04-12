@@ -12,6 +12,6 @@ export const ManageProductOptions = [
   {
     title: "Remove Product",
     image: "https://cdn-icons-png.flaticon.com/512/10608/10608888.png",
-    path: "Home",
+    path: "Remove Product",
   },
 ];
