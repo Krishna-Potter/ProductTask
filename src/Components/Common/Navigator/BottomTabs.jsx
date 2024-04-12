@@ -1,10 +1,15 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 import React from "react";
 import { BottomTabData } from "./TabData";
 import { Text, View } from "react-native";
 import { colorTheme } from "../../../Theme/colorTheme";
+import ProductInfoScreen from "../../../Screens/PrdoductInfo/ProductInfo";
+import AddProductScreen from "../../../Screens/ManageProducts/AddProduct";
+import EditProductScreen from "../../../Screens/ManageProducts/EditProduct";
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const screenOptions = {
   tabBarStyle: {
@@ -19,7 +24,7 @@ const tabBarLabelStyles = {
   fontWeight: "500",
 };
 
-function BottomTabs() {
+export function BottomTabs() {
   return (
     <Tab.Navigator screenOptions={screenOptions}>
       {BottomTabData.map((data, index) => {
@@ -64,4 +69,31 @@ function BottomTabs() {
   );
 }
 
-export default BottomTabs;
+const OverAllNavs = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Home--"
+        component={BottomTabs}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Product Details"
+        component={ProductInfoScreen}
+        options={{ headerShown: true }}
+      />
+      <Stack.Screen
+        name="Add Product"
+        component={AddProductScreen}
+        options={{ headerShown: true }}
+      />
+      <Stack.Screen
+        name="Edit Product"
+        component={EditProductScreen}
+        options={{ headerShown: true }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+export default OverAllNavs;

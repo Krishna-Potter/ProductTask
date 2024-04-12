@@ -1,17 +1,22 @@
 import React from "react";
-import { Image, Text, View } from "react-native";
+import { Image, Text, TouchableHighlight, View } from "react-native";
 import { styles } from "./styles";
 
-function ManageProductCard({ title, image }) {
+function ManageProductCard({ title, image, onPressEvent }) {
   return (
-    <View style={styles.manageCardContainer}>
-      <View>
-        <Image source={require(image)} />
+    <TouchableHighlight onPress={onPressEvent} underlayColor="white">
+      <View style={styles.manageCardContainer}>
+        <View>
+          <Image
+            source={{ uri: image }}
+            style={{ height: 150, width: 150, objectFit: "contain" }}
+          />
+        </View>
+        <View>
+          <Text style={styles.manageCardContainer.title}>{title}</Text>
+        </View>
       </View>
-      <View>
-        <Text style={styles.manageCardContainer.title}>{title}</Text>
-      </View>
-    </View>
+    </TouchableHighlight>
   );
 }
 

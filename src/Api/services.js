@@ -11,3 +11,15 @@ export const ProductListApi = (payload) => {
 export const ProductListSearchApi = (query, payload) => {
   return axiosInstance.get(`products/search?q=${query}`, payload);
 };
+
+export const AddProductApi = (payload) => {
+  return axiosInstance.post(`add`, payload);
+};
+
+export const EditProductApi = (productID, payload) => {
+  return axiosInstance.put(`products/${productID}`, payload);
+};
+
+export const DeleteProductApi = (productID, payload) => {
+  return axiosInstance.delete(`products/${productID}`, payload);
+};

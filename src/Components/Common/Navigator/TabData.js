@@ -13,14 +13,14 @@ export const BottomTabData = [
       iconName: "category",
     },
   },
-  {
-    title: "Product Details",
-    comp: ProductInfoScreen,
-    options: {
-      icon: MaterialIcons,
-      iconName: "info",
-    },
-  },
+  // {
+  //   title: "Product Details",
+  //   comp: ProductInfoScreen,
+  //   options: {
+  //     icon: MaterialIcons,
+  //     iconName: "info",
+  //   },
+  // },
   {
     title: "Manage",
     comp: ManageProductsScreen,

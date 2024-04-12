@@ -24,7 +24,11 @@ function ProductCard({ id, image, title, brand, category }) {
           <Button
             // icon="camera"
             mode="contained"
-            onPress={() => console.log("Pressed")}
+            onPress={() =>
+              navigation.navigate("Edit Product", {
+                itemId: id,
+              })
+            }
             style={styles.descContainer.actionContainer.Button}
           >
             Edit

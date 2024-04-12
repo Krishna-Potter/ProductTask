@@ -4,6 +4,7 @@ import { styles } from "./styles";
 import { ProductListApi } from "../../Api/services";
 import { Button } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
+import OverAllNavs from "../../Components/Common/Navigator/BottomTabs";
 
 function ProductInfoScreen({ route }) {
   const navigation = useNavigation();

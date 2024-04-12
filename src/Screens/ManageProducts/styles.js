@@ -17,4 +17,16 @@ export const styles = StyleSheet.create({
     color: colorTheme.secondary,
     textAlign: "center",
   },
+  formContainer: {
+    flex: 1,
+    backgroundColor: colorTheme.white,
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 2,
+    elevation: 1,
+  },
+  submitBtn: {
+    borderRadius: 0,
+    marginVertical: 8,
+  },
 });
