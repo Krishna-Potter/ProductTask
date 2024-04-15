@@ -7,7 +7,7 @@ import { AuthContext } from "../Context/AuthContext";
 
 function RouterConfig() {
   const { loginStatus } = useContext(AuthContext);
-  const isLoggedIn = true;
+  const isLoggedIn = loginStatus;
 
   return (
     <View style={styles.container}>
